@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python Sandbox · PythonEX</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="sandbox">
+  <header class="topbar no-print"><div class="topbar-inner">
+    <a class="brand" href="index.html">Python<span>EX</span></a>
+    <nav class="nav">
+      <a href="index.html">Course</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="sandbox.html" aria-current="page">Sandbox</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <div class="hero">
+      <h1>Python sandbox</h1>
+      <p>Real Python 3 running in your browser through Pyodide. Nothing is installed and nothing leaves your machine.
+        Try your own code, or paste a snippet from a lesson. <b>Ctrl+Enter</b> (or ⌘+Enter) runs it.</p>
+    </div>
+    <div class="sandbox-area">
+      <textarea id="editor" spellcheck="false" aria-label="Python code editor"></textarea>
+      <div class="btn-row">
+        <button type="button" class="btn" id="sb-run">Run ▶</button>
+        <button type="button" class="btn ghost" id="sb-reset">Reset to starter</button>
+        <button type="button" class="btn ghost" id="sb-clear">Clear output</button>
+        <span class="status-line" id="sbstatus"></span>
+      </div>
+      <pre class="cb-out" id="sbout"></pre>
+    </div>
+    <p class="small muted">Available libraries: the standard library, plus NumPy and pandas (loaded automatically when your code imports them).
+      PyTorch and machine-learning libraries are not available in the browser. Those units use Google Colab or a local install.</p>
+  </main>
+  <footer class="site-foot no-print">PythonEX · Sandbox</footer>
+  <script src="content/course.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
