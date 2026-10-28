@@ -253,6 +253,7 @@
         case 'h3': return '<h3>' + esc(b.text) + '</h3>';
         case 'p': return '<p>' + b.html + '</p>';
         case 'ul': return '<ul>' + b.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul>';
+        case 'ol': return '<ol>' + b.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ol>';
         case 'html': return b.html;
         case 'code': return codeBlock(b);
         case 'tip': return '<div class="callout tip"><strong>Tip</strong>' + b.html + '</div>';

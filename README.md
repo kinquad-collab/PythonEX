@@ -12,7 +12,7 @@ the browser, and a downloadable PDF.
 | `index.html` | Course dashboard: units by stage, progress checkmarks (saved in each browser only) |
 | `lesson.html?unit=u05` | One lesson. `?unit=all&print=1` prints the full course |
 | `glossary.html` | Every key term, grouped by unit, with search and A–Z jump links |
-| `sandbox.html` | Free-play Python editor (Pyodide). Ctrl+Enter runs code |
+| `sandbox.html` | Free-play Python editor (Pyodide: standard library, NumPy, pandas, scikit-learn). Ctrl+Enter runs code |
 | `pdfs/` | Downloadable PDFs (one per unit, full course, glossary) |
 
 ## Repository layout
@@ -41,13 +41,22 @@ scripts/build-pdfs.js  prints the real pages to PDF with Playwright
 | 8 | Tuples and Sets | Lesson |
 | 9 | Dictionaries | Lesson |
 | 10 | Libraries and Modules | Lesson |
-| 11 | Errors and Exceptions | Outline |
-| 12 | NumPy: Arrays and Fast Math | Outline |
-| 13 | pandas: DataFrames | Outline |
-| 14 | PyTorch and the Machine-Learning Workflow | Outline |
+| 11 | Errors and Exceptions | Lesson |
+| 12 | Advanced Functions and Comprehensions | Lesson |
+| 13 | Files, CSV, and JSON | Lesson |
+| 14 | Classes and Objects | Lesson |
+| 15 | The Standard Library Toolkit | Lesson |
+| 16 | NumPy: Arrays and Fast Math | Lesson |
+| 17 | pandas: Tables You Can Question | Lesson |
+| 18 | Visualizing Data with matplotlib | Lesson |
+| 19 | Machine Learning with scikit-learn | Lesson |
+| 20 | PyTorch: Tensors, Gradients, and Neural Networks | Lesson (run in Colab) |
+| 21 | Training a PyTorch Model | Lesson (run in Colab) |
+| 22 | Capstone and Responsible Data Work | Lesson |
+| 23 | Working Like a Python Developer | Reference lesson |
 
-Planned units are listed on the dashboard as "In development". Their pages show the outline and
-are left out of the PDFs.
+Stages on the dashboard: **Foundations** (units 1–15), **Data tools** (16–18), **Machine learning** (19–22),
+and **Reference** (23, read before 19–21).
 
 ## Adding or editing a unit
 
@@ -94,4 +103,4 @@ and the `/ (root)` folder. The `.nojekyll` file tells Pages to serve the files a
 The sandbox loads Python 3.12 (Pyodide 0.26.4) from the jsDelivr CDN the first time someone
 presses Run. The first run takes a few seconds. `input()` is not supported in the browser.
 Standard-library modules work. NumPy and pandas load automatically when code imports them.
-PyTorch does not run in the browser, so those units will use Google Colab or a local install.
+PyTorch and matplotlib plots do not run in the browser, so Units 18, 20, and 21 are marked to run in Colab or locally.

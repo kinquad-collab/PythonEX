@@ -67,6 +67,7 @@ body {
 }
 a { color: var(--accent); }
 img, svg { max-width: 100%; }
+pre { overflow-x: auto; max-width: 100%; }
 h1, h2, h3, h4 { line-height: 1.25; margin: 1.6em 0 .5em; }
 h1 { font-size: 2rem; margin-top: .2em; }
 h2 { font-size: 1.4rem; border-bottom: 1px solid var(--line); padding-bottom: .3em; }
