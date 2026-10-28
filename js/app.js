@@ -229,17 +229,19 @@
   }
 
   function exerciseBlock(b, n) {
-    var hint = b.hint ? '<details class="facil"><summary>Hint</summary><div>' + b.hint + '</div></details>' : '';
+    var hint = b.hint ? '<details class="hint"><summary>Hint</summary><div>' + b.hint + '</div></details>' : '';
+    // PDFs are student handouts: solutions are left out of print output.
+    var solution = PRINT ? '' :
+      '<details class="solution"><summary>Show solution</summary>' + codeBlock({ code: b.solution, caption: 'Solution', run: b.runnable }) + '</details>';
     return '<details class="exercise" open><summary>Exercise ' + n + (b.title ? ' — ' + esc(b.title) : '') + '</summary>' +
-      '<div>' + b.prompt + '</div>' + hint +
-      '<details class="solution"><summary>Show solution</summary>' + codeBlock({ code: b.solution, caption: 'Solution', run: b.runnable }) + '</details>' +
-      '</details>';
+      '<div>' + b.prompt + '</div>' + hint + solution + '</details>';
   }
 
   function discussionBlock(b) {
     var items = b.prompts.map(function (p) { return '<li>' + p + '</li>'; }).join('');
+    // Facilitator notes are for the instructor, so they stay out of the PDFs.
     return '<div class="callout"><strong>Discussion</strong><ol class="disc">' + items + '</ol></div>' +
-      (b.facilitator ? '<details class="facil"><summary>Facilitator notes</summary><div>' + b.facilitator + '</div></details>' : '');
+      (b.facilitator && !PRINT ? '<details class="facil"><summary>Facilitator notes</summary><div>' + b.facilitator + '</div></details>' : '');
   }
 
   function renderBlocks(blocks) {
